@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OrganizationUser>
@@ -19,9 +18,9 @@ class OrganizationUserFactory extends Factory
     {
         return [
             //'uuid'=>$this->faker->uuid(),
-            'name'=>$this->faker->name()
-            ,'email'=> $this->faker->email()
-            //,'password'=> Hash::make($password)
+            'name'  => $this->faker->name(),
+            'email' => $this->faker->email(),
+            //'password'=> Hash::make($password),
         ];
     }
 }

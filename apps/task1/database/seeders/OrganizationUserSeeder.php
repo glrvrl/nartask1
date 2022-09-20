@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\OrganizationUser;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class OrganizationUserSeeder extends Seeder
@@ -16,7 +15,7 @@ class OrganizationUserSeeder extends Seeder
     public function run()
     {
         OrganizationUser::factory()
-            ->count(5)
-            ->create();
+                        ->count(5)
+                        ->create();
     }
 }

@@ -18,10 +18,10 @@ class OrganizationFactory extends Factory
     {
         return [
             //'uuid'=>$this->faker->uuid(),
-            'name'=>$this->faker->name()
-            ,'email'=>$this->faker->email()
-            ,'phone'=>$this->faker->phoneNumber()
-            ,'address'=>$this->faker->address()
+            'name'    => $this->faker->name(),
+            'email'   => $this->faker->email(),
+            'phone'   => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
         ];
     }
 }

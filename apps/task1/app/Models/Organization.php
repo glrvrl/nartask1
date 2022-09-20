@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Organization extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(OrganizationUser::class, 'email', 'email');
+    }
 }

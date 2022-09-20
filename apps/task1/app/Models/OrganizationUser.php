@@ -10,4 +10,13 @@ class OrganizationUser extends Model
 {
     use HasFactory;
     use Notifiable;
+
+    protected $guarded = [];
+
+    protected $hidden = ['password'];
+
+    public function organizations()
+    {
+        return $this->hasMany(Organization::class, 'email', 'email');
+    }
 }
