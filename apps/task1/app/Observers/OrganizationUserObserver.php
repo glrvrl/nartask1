@@ -22,13 +22,17 @@ class OrganizationUserObserver
         while (OrganizationUser::where("uuid", $uuid)->count() > 0) {
             $uuid = Str::uuid();
         }
-        $password                   = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz'),
-            1, 6);
-        $organizationUser->uuid     = $uuid;
-        $organizationUser->password = Hash::make($password);
+
+        $organizationUser->uuid = $uuid;
+        if (empty($organizationUser->password)) {
+            $password                   = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz'),
+                1, 6);
+            $organizationUser->password = Hash::make($password);
+            $organizationUser->notify(new WelcomeEmailNotification($password, $organizationUser->name));
+        }
+
         $organizationUser->save();
 
-        $organizationUser->notify(new WelcomeEmailNotification($password, $organizationUser->name));
     }
 
 }

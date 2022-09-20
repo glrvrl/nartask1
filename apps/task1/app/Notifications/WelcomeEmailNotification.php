@@ -61,8 +61,7 @@ class WelcomeEmailNotification extends Notification implements ShouldQueue
             ->greeting('Merhaba ' . $this->name)
             ->line('Hesabınız oluşturuldu.')
             ->line('Geçici şifreniz: ' . $this->plain_password)
-            ->line('Değiştirmeyi unutmayın...')
-            ->action('Giriş İçin', url('/'));
+            ->line('Değiştirmeyi unutmayın...');
     }
 
     /**

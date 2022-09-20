@@ -14,9 +14,9 @@ return new class extends Migration {
     {
         Schema::create('organization_users', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->nullable();
-            $table->string('name');
-            $table->string('email');
+            $table->uuid()->nullable()->index();
+            $table->string('name')->index();
+            $table->string('email')->index();
             $table->string('password')->nullable();
             $table->timestamps();
         });

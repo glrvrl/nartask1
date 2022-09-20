@@ -64,7 +64,7 @@ class OrganizationCsvImport implements ShouldQueue
                 $model_data['name']    = $data [0];
                 $model_data['email']   = $data [1];
                 $model_data['phone']   = $data [2];
-                $model_data['address'] = $data [3];
+                $model_data['address'] = trim(preg_replace('/\s+/', ' ', $data [3]));
 
                 Organization::query()->create($model_data);
             }

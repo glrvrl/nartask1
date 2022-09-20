@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->nullable();
+            $table->uuid()->nullable()->index();
             $table->string('name')->index();
             $table->string('email')->index();
             $table->string('phone')->index();

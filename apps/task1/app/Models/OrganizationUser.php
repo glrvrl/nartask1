@@ -15,6 +15,8 @@ class OrganizationUser extends Model
 
     protected $hidden = ['password'];
 
+    protected $fillable = ['name', 'email', 'password'];
+
     public function organizations()
     {
         return $this->hasMany(Organization::class, 'email', 'email');
