@@ -7,6 +7,7 @@ use App\Http\Resources\ApiResource;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 
 class OrganizationController extends Controller
@@ -18,7 +19,9 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        $organization = Organization::with('user')->get();
+        $organization = Cache::remember('organizations', 60, function () {
+            return Organization::with('user')->get();
+        });
 
         return response([
             'organizations' => ApiResource::collection($organization),

@@ -7,6 +7,7 @@ use App\Http\Resources\ApiResource;
 use App\Models\OrganizationUser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,7 +20,10 @@ class OrganizationUserController extends Controller
      */
     public function index()
     {
-        $organizationUser = OrganizationUser::with('organizations')->get();
+        $organizationUser = Cache::remember('organizationsUser', 60, function () {
+            return OrganizationUser::with('organizations')->get();
+        });
+
 
         return response([
             'organizationsUser' => ApiResource::collection($organizationUser),
