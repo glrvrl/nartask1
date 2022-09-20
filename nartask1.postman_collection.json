@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "8ba308a9-c870-4d7f-80f6-b815cf3be602",
+		"name": "nartask1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5206795"
+	},
+	"item": [
+		{
+			"name": "Organiation",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization/?name=Test User&email=test.varol3@gm2ail.com&phone=+90 542 740 6795&address=adres",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test User"
+								},
+								{
+									"key": "email",
+									"value": "test.varol3@gm2ail.com"
+								},
+								{
+									"key": "phone",
+									"value": "+90 542 740 6795"
+								},
+								{
+									"key": "address",
+									"value": "adres"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization/26/?name=Güler Varol-düzenlenmiş&email=gulervarol@gmail.com&phone=+90 542 740 6795-düzenlenmiş&address=adres-düzenlenmiş",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								"26",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Güler Varol-düzenlenmiş"
+								},
+								{
+									"key": "email",
+									"value": "gulervarol@gmail.com"
+								},
+								{
+									"key": "phone",
+									"value": "+90 542 740 6795-düzenlenmiş"
+								},
+								{
+									"key": "address",
+									"value": "adres-düzenlenmiş"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrganiationUser",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization-user/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization-user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization-user/?name=Güler Varol9&email=gulervarol9@gmail.com&password=123456&password_confirmation=123456",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization-user",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Güler Varol9"
+								},
+								{
+									"key": "email",
+									"value": "gulervarol9@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization-user/4/?name=güler varol&email=gulervarol@gmail.com&password=123456999&password_confirmation=123456999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization-user",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "güler varol"
+								},
+								{
+									"key": "email",
+									"value": "gulervarol@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "123456999"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/organization-user/26",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organization-user",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://task1.test/api",
+			"type": "string"
+		}
+	]
+}

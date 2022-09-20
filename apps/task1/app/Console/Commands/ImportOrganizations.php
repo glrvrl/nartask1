@@ -30,7 +30,7 @@ class ImportOrganizations extends Command
     {
         $this->info('Csv importing...');
 
-        OrganizationCsvImport::dispatch('app/public/organizations.lite.csv');
+        OrganizationCsvImport::dispatch('app/public/organizations.txt.csv');
 
         return 0;
     }
